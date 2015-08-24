@@ -1,0 +1,17 @@
+{
+    "name": "sohelrana820/php-socialauth",
+    "description": "This is social media login for php",
+    "keywords": ["social login", "login with facebook", "facebook login in php"],
+    "homepage": "https://github.com/sohelrana820/php-socialauth",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.0",
+        "slim/slim": "2.*",
+        "slim/views": "0.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}
