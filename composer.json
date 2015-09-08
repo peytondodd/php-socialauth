@@ -10,8 +10,8 @@
         "abraham/twitteroauth": "^0.5.4"
     },
     "autoload": {
-        "psr-0": {
-            "": "src/"
+        "psr-4": {
+            "SocialAuth\\": "src/"
         }
     }
 }
