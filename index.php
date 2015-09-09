@@ -1,9 +1,9 @@
 <?php
 require 'vendor/autoload.php';
 
-$facebook = new \SocialAuth\Facebook();
-$facebookA = new \SocialAuth\FacebookAdapter(new \SocialAuth\Facebook());
+$facebook = new \SocialAuth\Adapter\Twitter();
 
-echo $facebookA->getLoginUrl();
-echo $facebookA->getUser();
-echo $facebookA->getLoginUrl();
+$a = new \SocialAuth\SocialAdapter($facebook);
+
+
+echo $a->getLoginUrl();
