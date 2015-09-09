@@ -10,7 +10,13 @@
 
 namespace SocialAuth;
 
-class Config
-{
-    public $name = 'SocialAuth';
+
+interface SocialAuthInterface {
+
+    public function getLoginUrl();
+
+    public function getUser();
+
+    public function getLogoutUrl();
+
 }

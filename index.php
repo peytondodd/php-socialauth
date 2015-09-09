@@ -1,4 +1,9 @@
 <?php
 require 'vendor/autoload.php';
-$config = new \SocialAuth\Config();
-echo $config->name;
+
+$facebook = new \SocialAuth\Facebook();
+$facebookA = new \SocialAuth\FacebookAdapter(new \SocialAuth\Facebook());
+
+echo $facebookA->getLoginUrl();
+echo $facebookA->getUser();
+echo $facebookA->getLoginUrl();
