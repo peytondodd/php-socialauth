@@ -9,7 +9,7 @@ class Twitter {
 
     }
 
-    public function login() {
+    public function loginUrl() {
         return 'this function will return the twitter login url';
     }
 

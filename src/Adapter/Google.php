@@ -9,7 +9,7 @@ class Google {
 
     }
 
-    public function login() {
+    public function loginUrl() {
         return 'this function will return the google login url';
     }
 

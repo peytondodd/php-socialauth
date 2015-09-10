@@ -17,8 +17,24 @@ class SocialAdapter implements SocialAuthInterface {
         $this->facebook = $adapter;
     }
 
-    public function getLoginUrl() {
-        return $this->facebook->login();
+    public function getLoginUrl($callbackUrl) {
+
+        if(!$callbackUrl)
+        {
+            return Config::setErrorMessage('empty_domain');
+        }
+        elseif(Config::checkValidDomain($callbackUrl)){
+            $loginUrl = $this->facebook->loginUrl($callbackUrl);
+            if($loginUrl)
+            {
+                return $loginUrl;
+            }
+            return Config::setErrorMessage();
+        }
+        else{
+            return Config::setErrorMessage('invalid_domain');
+        }
+
     }
 
     public function getUser()

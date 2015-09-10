@@ -9,7 +9,7 @@ class Linkedin {
 
     }
 
-    public function login() {
+    public function loginUrl() {
         return 'this function will return the linkedin login url';
     }
 

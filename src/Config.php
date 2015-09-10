@@ -7,12 +7,13 @@
  * linkedin
  */
 
-
 namespace SocialAuth;
 
-define('FACEBOOK_API_ID', 'this is my API');
+define('DEVELOPMENT_MODE', true);
 
-define('FACEBOOK_API_SECRET_KEY', 'API KEY');
+define('FACEBOOK_API_ID', '1645244829055897');
+
+define('FACEBOOK_API_SECRET_KEY', '7d0ec4407bb39dbb21167ea5269af7f8');
 
 class Config{
 
@@ -22,4 +23,42 @@ class Config{
 
     public static $facebookApiSecretKey = FACEBOOK_API_SECRET_KEY;
 
+    public static function checkValidDomain($domain)
+    {
+        if(DEVELOPMENT_MODE == true){
+            return true;
+        }
+        else{
+            /*
+             * @TODO Here need to check the given domain is valid or not. Return true if valid otherwise return false
+             */
+            return true;
+        }
+    }
+
+    public static function setErrorMessage($error = null)
+    {
+        $msg = 'Unknown reasone';
+        $errorCode = '000';
+
+        if($error == 'empty_domain')
+        {
+            $msg = 'Please provide the domain name';
+            $errorCode = '001';
+        }
+        elseif($error == 'invalid_domain')
+        {
+            $msg = 'Invalid domain';
+            $errorCode = '001';
+        }
+
+        $error = array(
+            'error' => array(
+                'code' => $errorCode,
+                'message' => $msg
+            )
+        );
+
+        return $error;
+    }
 }

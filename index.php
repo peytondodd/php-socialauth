@@ -1,10 +1,5 @@
 <?php
+session_start();
 require 'vendor/autoload.php';
-
-
-
 $obj = new \SocialAuth\SocialAdapter(new \SocialAuth\Adapter\Facebook());
-
-
-echo $obj->getLoginUrl();
-echo $obj->getUser();
+var_dump($obj->getLoginUrl('222'));

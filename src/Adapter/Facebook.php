@@ -11,8 +11,26 @@ class Facebook {
 
     }
 
-    public function login() {
-        return Config::$facebookApiID;
+    /**
+     * @param $callbackUrl
+     * @return string
+     */
+    public function loginUrl($callbackUrl) {
+
+        $facebook = new \Facebook\Facebook([
+            'app_id' => Config::$facebookApiID,
+            'app_secret' => Config::$facebookApiSecretKey,
+            'default_graph_version' => 'v2.2',
+        ]);
+
+        $helper = $facebook->getRedirectLoginHelper();
+        $loginUrl = $helper->getLoginUrl($callbackUrl);
+
+        if($loginUrl)
+        {
+            return  $loginUrl;
+        }
+        return false;
     }
 
     public function user() {
