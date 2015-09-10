@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 
 
 
-$obj = new \SocialAuth\SocialAdapter(new \SocialAuth\Adapter\Linkedin());
+$obj = new \SocialAuth\SocialAdapter(new \SocialAuth\Adapter\Facebook());
 
 
 echo $obj->getLoginUrl();
