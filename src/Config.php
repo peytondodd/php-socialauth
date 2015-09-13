@@ -11,9 +11,9 @@ namespace SocialAuth;
 
 define('DEVELOPMENT_MODE', true);
 
-define('FACEBOOK_API_ID', '1645244829055897');
+define('FACEBOOK_API_ID', '1648440608736319');
 
-define('FACEBOOK_API_SECRET_KEY', '7d0ec4407bb39dbb21167ea5269af7f8');
+define('FACEBOOK_API_SECRET_KEY', 'f8f3bc27aa166e06b1c74c935ac51d19');
 
 class Config{
 

@@ -4,27 +4,42 @@
 namespace SocialAuth\Adapter;
 
 use SocialAuth\Config;
+use SocialAuth\Utility\ErrorHandler;
 
 class Facebook {
 
-    public function __construct() {
+    public $callBackUrl;
 
+    public $facebook;
+
+    public function __construct($callbackUrl)
+    {
+        $this->callBackUrl = $callbackUrl;
     }
 
     /**
-     * @param $callbackUrl
      * @return string
      */
-    public function loginUrl($callbackUrl) {
+    public function loginUrl() {
 
-        $facebook = new \Facebook\Facebook([
+        if(!$this->callBackUrl)
+        {
+            return ErrorHandler::error('empty_domain');
+        }
+
+        if(!Config::checkValidDomain($this->callBackUrl))
+        {
+            return ErrorHandler::error('invalid_domain');
+        }
+
+        $this->facebook = new \Facebook\Facebook([
             'app_id' => Config::$facebookApiID,
             'app_secret' => Config::$facebookApiSecretKey,
             'default_graph_version' => 'v2.2',
         ]);
 
-        $helper = $facebook->getRedirectLoginHelper();
-        $loginUrl = $helper->getLoginUrl($callbackUrl);
+        $helper = $this->facebook->getRedirectLoginHelper();
+        $loginUrl = $helper->getLoginUrl($this->callBackUrl);
 
         if($loginUrl)
         {
@@ -33,8 +48,8 @@ class Facebook {
         return false;
     }
 
-    public function user() {
-        return Config::$facebookApiSecretKey;
+    public function userProfile() {
+        return $this->facebook;
     }
 
     public function logout() {

@@ -11,7 +11,7 @@ namespace SocialAuth\Utility;
 
 class ErrorHandler
 {
-    public static function error($error = null)
+    public static function error($error = null, $message = null)
     {
         $msg = 'Unknown reasone';
         $errorCode = '000';
@@ -25,6 +25,11 @@ class ErrorHandler
         {
             $msg = 'Invalid domain';
             $errorCode = '001';
+        }
+
+        if($message)
+        {
+            $msg = $message;
         }
 
         $error = array(

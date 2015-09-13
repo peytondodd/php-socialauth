@@ -12,9 +12,9 @@ namespace SocialAuth;
 
 interface SocialAuthInterface {
 
-    public function getLoginUrl($callbackUrl);
+    public function getLoginUrl();
 
-    public function getUser();
+    public function getUserProfile();
 
     public function getLogoutUrl();
 
