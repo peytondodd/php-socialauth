@@ -9,6 +9,8 @@
 
 namespace SocialAuth;
 
+use SocialAuth\Utility\ErrorHandler;
+
 class SocialAdapter implements SocialAuthInterface {
 
     private $facebook;
@@ -21,7 +23,7 @@ class SocialAdapter implements SocialAuthInterface {
 
         if(!$callbackUrl)
         {
-            return Config::setErrorMessage('empty_domain');
+            return ErrorHandler::error('empty_domain');
         }
         elseif(Config::checkValidDomain($callbackUrl)){
             $loginUrl = $this->facebook->loginUrl($callbackUrl);
@@ -29,10 +31,10 @@ class SocialAdapter implements SocialAuthInterface {
             {
                 return $loginUrl;
             }
-            return Config::setErrorMessage();
+            return  ErrorHandler::error();
         }
         else{
-            return Config::setErrorMessage('invalid_domain');
+            return ErrorHandler::error('invalid_domain');
         }
 
     }

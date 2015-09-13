@@ -35,30 +35,4 @@ class Config{
             return true;
         }
     }
-
-    public static function setErrorMessage($error = null)
-    {
-        $msg = 'Unknown reasone';
-        $errorCode = '000';
-
-        if($error == 'empty_domain')
-        {
-            $msg = 'Please provide the domain name';
-            $errorCode = '001';
-        }
-        elseif($error == 'invalid_domain')
-        {
-            $msg = 'Invalid domain';
-            $errorCode = '001';
-        }
-
-        $error = array(
-            'error' => array(
-                'code' => $errorCode,
-                'message' => $msg
-            )
-        );
-
-        return $error;
-    }
 }
