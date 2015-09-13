@@ -14,6 +14,8 @@ interface SocialAuthInterface {
 
     public function getLoginUrl();
 
+    public function isAuthenticated();
+
     public function getUserProfile();
 
     public function getLogoutUrl();

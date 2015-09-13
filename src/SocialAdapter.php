@@ -22,6 +22,11 @@ class SocialAdapter implements SocialAuthInterface {
         return $this->facebook->loginUrl();
     }
 
+    public function isAuthenticated() {
+
+        return $this->facebook->checkAuth();
+    }
+
     public function getUserProfile()
     {
         return $this->facebook->userProfile();
