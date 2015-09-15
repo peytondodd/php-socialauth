@@ -10,10 +10,11 @@
 namespace SocialAuth;
 
 define('DEVELOPMENT_MODE', true);
-
 define('FACEBOOK_API_ID', '1493144440984604');
-
 define('FACEBOOK_API_SECRET_KEY', '7a87489d6c89aee05dd84eeb37aedaa7');
+
+define('TWITTER_CUSTOMER_KEY', 'dG7STOacX3i0Rp7YLHHpKnUcg');
+define('TWITTER_CUSTOMER_SECRET_KEY', 'k2dABvUMMY42KHH7eEyVaMXyu7Vr3m2fsgftqzW5wu9APzM05h');
 
 class Config{
 
@@ -22,6 +23,9 @@ class Config{
     public static $facebookApiID = FACEBOOK_API_ID;
 
     public static $facebookApiSecretKey = FACEBOOK_API_SECRET_KEY;
+
+    public static $twitterCustomerKey = TWITTER_CUSTOMER_KEY;
+    public static $twitterCustomerSecretKey = TWITTER_CUSTOMER_SECRET_KEY;
 
     public static function checkValidDomain($domain)
     {

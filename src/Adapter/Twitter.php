@@ -1,23 +1,26 @@
 <?php
 
-
 namespace SocialAuth\Adapter;
 
-class Twitter {
+use Abraham\TwitterOAuth\TwitterOAuth;
+use SocialAuth\Config;
+use SocialAuth\Utility\ErrorHandler;
 
-    public function __construct() {
+class Twitter
+{
 
-    }
+    private $callBackUrl;
 
-    public function loginUrl() {
-        return 'this function will return the twitter login url';
-    }
+    private $twitter;
 
-    public function user() {
-        return 'this function will return the twitter user profile';
-    }
-
-    public function logout() {
-        return 'this function will return the  twitter logout url';
+    /**
+     * @param $callbackUrl
+     *
+     * Construct function will taken callback url as argument and create twitter object for that given url.
+     */
+    public function __construct($callbackUrl)
+    {
+        $this->callBackUrl = $callbackUrl;
+        $this->twitter = new TwitterOAuth(Config::$twitterCustomerKey, Config::$twitterCustomerSecretKey);
     }
 }
