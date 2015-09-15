@@ -24,7 +24,17 @@ class ErrorHandler
         elseif($error == 'invalid_domain')
         {
             $msg = 'Invalid domain';
-            $errorCode = '001';
+            $errorCode = '002';
+        }
+        elseif($error == 'oauth')
+        {
+            $msg = 'Authenticaion problem';
+            $errorCode = '003';
+        }
+        elseif($error == 'api_error')
+        {
+            $msg = 'Authenticaion problem';
+            $errorCode = '003';
         }
 
         if($message)

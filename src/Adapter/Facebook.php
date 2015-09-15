@@ -62,11 +62,29 @@ class Facebook {
     }
 
     public function accessCode() {
-        return $this->accessCode;
+        if($this->checkAuth())
+        {
+            return $this->accessCode->getValue();
+        }
+        return ErrorHandler::error('oauth');
     }
 
     public function userProfile() {
-
+        if($this->checkAuth())
+        {
+            try {
+                $response = $this->facebook->get('/me?fields=id, name', $this->accessCode);
+                $user = $response->getGraphUser();
+                return $user;
+            }
+            catch(\Facebook\Exceptions\FacebookResponseException $e) {
+                $msg = 'Graph returned an error: ' . $e->getMessage();
+            }
+            catch(\Facebook\Exceptions\FacebookSDKException $e) {
+                $msg = 'Facebook SDK returned an error: ' . $e->getMessage();
+            }
+        }
+        return ErrorHandler::error('api_error', $msg);
     }
 
     public function logout() {
