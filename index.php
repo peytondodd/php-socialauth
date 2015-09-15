@@ -5,7 +5,7 @@ $facebook = new \SocialAuth\SocialAdapter(new \SocialAuth\Adapter\Facebook('http
 
 if($facebook->isAuthenticated())
 {
-    echo 'Loggedin';
+    echo $facebook->getAccessCode();
 }
 else{
     echo '<a href="'.$facebook->getLoginUrl().'">Login with facebook</a>';

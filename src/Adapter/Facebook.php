@@ -8,13 +8,13 @@ use SocialAuth\Utility\ErrorHandler;
 
 class Facebook {
 
-    public $callBackUrl;
+    private $callBackUrl;
 
-    public $facebook;
+    private $facebook;
 
-    public $loginHelper;
+    private $loginHelper;
 
-    public $accessCode;
+    private $accessCode;
 
     public function __construct($callbackUrl)
     {
@@ -59,6 +59,10 @@ class Facebook {
             return true;
         }
         return false;
+    }
+
+    public function accessCode() {
+        return $this->accessCode;
     }
 
     public function userProfile() {
