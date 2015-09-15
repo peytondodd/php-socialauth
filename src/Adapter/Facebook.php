@@ -14,15 +14,19 @@ class Facebook {
 
     public $loginHelper;
 
+    public $accessCode;
+
     public function __construct($callbackUrl)
     {
         $this->callBackUrl = $callbackUrl;
-
         $this->facebook = new \Facebook\Facebook([
             'app_id' => Config::$facebookApiID,
             'app_secret' => Config::$facebookApiSecretKey,
             'default_graph_version' => 'v2.2',
         ]);
+
+        $this->loginHelper = $this->facebook->getRedirectLoginHelper();
+        $this->accessCode = $this->loginHelper->getAccessToken();
     }
 
     /**
@@ -40,7 +44,6 @@ class Facebook {
             return ErrorHandler::error('invalid_domain');
         }
 
-        $this->loginHelper = $this->facebook->getRedirectLoginHelper();
         $loginUrl = $this->loginHelper->getLoginUrl($this->callBackUrl);
 
         if($loginUrl)
@@ -51,13 +54,15 @@ class Facebook {
     }
 
     public function checkAuth() {
-        /**
-         * @TODO need to check the user i authenticated or not
-         */
+        if($this->accessCode)
+        {
+            return true;
+        }
+        return false;
     }
 
     public function userProfile() {
-        return $this->facebook;
+
     }
 
     public function logout() {
