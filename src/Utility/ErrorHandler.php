@@ -13,7 +13,7 @@ class ErrorHandler
 {
     public static function error($error = null, $message = null)
     {
-        $msg = 'Unknown reasone';
+        $msg = 'Unknown reasoon';
         $errorCode = '000';
 
         if($error == 'empty_domain')
@@ -33,8 +33,8 @@ class ErrorHandler
         }
         elseif($error == 'api_error')
         {
-            $msg = 'Authenticaion problem';
-            $errorCode = '003';
+            $msg = 'Authentication Problem';
+            $errorCode = '004';
         }
 
         if($message)
