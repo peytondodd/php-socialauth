@@ -3,7 +3,7 @@
  * @author: Sohel Rana
  * @email: me.sohelrana@gmail.com
  * @uri: http://sohelrana.me
- * @tags: social login, php social login, login with facebook, login with twitter, login with google. login with
+ * @tags: social login, php social login, login with adapter, login with twitter, login with google. login with
  * linkedin
  */
 
@@ -11,34 +11,34 @@ namespace SocialAuth;
 
 class SocialAdapter implements SocialAuthInterface {
 
-    private $facebook;
+    private $adapter;
 
     public function __construct($adapter) {
-        $this->facebook = $adapter;
+        $this->adapter = $adapter;
     }
 
     public function getLoginUrl() {
 
-        return $this->facebook->loginUrl();
+        return $this->adapter->loginUrl();
     }
 
     public function isAuthenticated() {
 
-        return $this->facebook->checkAuth();
+        return $this->adapter->checkAuth();
     }
 
     public function getAccessCode() {
 
-        return $this->facebook->accessCode();
+        return $this->adapter->accessCode();
     }
 
     public function getUserProfile()
     {
-        return $this->facebook->userProfile();
+        return $this->adapter->userProfile();
     }
 
     public function getLogoutUrl()
     {
-        return $this->facebook->logout();
+        return $this->adapter->logout();
     }
 }
