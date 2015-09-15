@@ -88,6 +88,6 @@ class Facebook {
     }
 
     public function logout() {
-        return 'this function will return the fb logout url';
+        return $this->loginHelper->getLogoutUrl($this->accessCode);
     }
 }

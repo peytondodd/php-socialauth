@@ -7,6 +7,7 @@ if($facebook->isAuthenticated())
 {
     echo $facebook->getAccessCode();
     var_dump($facebook->getUserProfile());
+    var_dump($facebook->getLogoutUrl());
 }
 else{
     echo '<a href="'.$facebook->getLoginUrl().'">Login with facebook</a>';
