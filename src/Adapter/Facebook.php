@@ -1,6 +1,5 @@
 <?php
 
-
 namespace SocialAuth\Adapter;
 
 use SocialAuth\Config;
@@ -19,6 +18,11 @@ class Facebook
 
     private $error;
 
+    /**
+     * @param $callbackUrl
+     *
+     * Construct function will taken callback url as argument and create facebook object for that given url.
+     */
     public function __construct($callbackUrl)
     {
         $this->callBackUrl = $callbackUrl;
@@ -46,6 +50,8 @@ class Facebook
 
     /**
      * @return string
+     *
+     * This function will return the login url for the facebook API. Login url will changes based on given callback url
      */
     public function loginUrl()
     {
@@ -66,6 +72,12 @@ class Facebook
         return ErrorHandler::error();
     }
 
+    /**
+     * @return array|null|string
+     *
+     * Checking the user/customer either accept the request. And system get the Access Code for that user.
+     * It will return 'auth' if they accepted otherwise it return the facebook API error.
+     */
     public function checkAuth()
     {
         if ($this->accessCode) {
@@ -74,6 +86,11 @@ class Facebook
         return ErrorHandler::error('api_error', $this->error);
     }
 
+    /**
+     * @return array|null
+     *
+     * This function will return the Access Code and return error if any issue.
+     */
     public function accessCode()
     {
         if ($this->accessCode) {
@@ -82,6 +99,11 @@ class Facebook
         return ErrorHandler::error('api_error', $this->error);
     }
 
+    /**
+     * @return array|\Facebook\GraphNodes\GraphUser|null
+     *
+     * This function will return the facebook basic (ID, Name) profile of user.
+     */
     public function userProfile()
     {
         if ($this->accessCode) {
@@ -98,6 +120,11 @@ class Facebook
         return ErrorHandler::error('api_error', $this->error);
     }
 
+    /**
+     * @return array|null
+     *
+     * This function will return the logout url for facebook.
+     */
     public function logout()
     {
         if ($this->accessCode) {
