@@ -21,6 +21,16 @@ class Twitter
     public function __construct($callbackUrl)
     {
         $this->callBackUrl = $callbackUrl;
-        $this->twitter = new TwitterOAuth(Config::$twitterCustomerKey, Config::$twitterCustomerSecretKey);
+        $this->twitter = new TwitterOAuth(Config::$twitterCustomerKey, Config::$twitterCustomerSecretKey, Config::$twitterAccessToken, Config::$twitterAccessTokenSecret);
+    }
+
+    public function checkAuth()
+    {
+        $verified = $this->twitter->get("account/verify_credentials");
+        if($verified)
+        {
+            return true;
+        }
+        return false;
     }
 }

@@ -13,8 +13,10 @@ define('DEVELOPMENT_MODE', true);
 define('FACEBOOK_API_ID', '1493144440984604');
 define('FACEBOOK_API_SECRET_KEY', '7a87489d6c89aee05dd84eeb37aedaa7');
 
-define('TWITTER_CUSTOMER_KEY', 'dG7STOacX3i0Rp7YLHHpKnUcg');
-define('TWITTER_CUSTOMER_SECRET_KEY', 'k2dABvUMMY42KHH7eEyVaMXyu7Vr3m2fsgftqzW5wu9APzM05h');
+define('TWITTER_CUSTOMER_KEY', 'Ulg59gtqd9eg2Dv5N3kpOLqml');
+define('TWITTER_CUSTOMER_SECRET_KEY', 'LCJy5fbFOqL8kM5ZNYez3yG8SwG0U6SJf95L9TlY9MAAPncaef');
+define('TWITTER_ACCESS_TOKEN', '315276438-qFuIQLhUfVyyfqLYstXMVmJIiMV4TVca1mWfY1KZ');
+define('TWITTER_ACCESS_TOKEN_SECRET', 'pl7hLXoMIoNHanGFR31O3iwCZVw8NOPysHfEbI1JHSZFP');
 
 class Config{
 
@@ -26,6 +28,8 @@ class Config{
 
     public static $twitterCustomerKey = TWITTER_CUSTOMER_KEY;
     public static $twitterCustomerSecretKey = TWITTER_CUSTOMER_SECRET_KEY;
+    public static $twitterAccessToken = TWITTER_ACCESS_TOKEN;
+    public static $twitterAccessTokenSecret = TWITTER_ACCESS_TOKEN_SECRET;
 
     public static function checkValidDomain($domain)
     {
