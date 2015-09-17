@@ -4,62 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "46bbe8e8e3ac01d0d3bccc7d3a5b6c45",
+    "hash": "7da6689e7ddcd326b522106b2c0197da",
     "packages": [
-        {
-            "name": "abraham/twitteroauth",
-            "version": "0.5.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/abraham/twitteroauth.git",
-                "reference": "1c05f38b7780c9e6d3938b3f2ac2f3fd9d810825"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/1c05f38b7780c9e6d3938b3f2ac2f3fd9d810825",
-                "reference": "1c05f38b7780c9e6d3938b3f2ac2f3fd9d810825",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpmd/phpmd": "2.2.*",
-                "phpunit/phpunit": "4.7.*",
-                "squizlabs/php_codesniffer": "2.3.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Abraham\\TwitterOAuth\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Abraham Williams",
-                    "email": "abraham@abrah.am",
-                    "homepage": "https://abrah.am",
-                    "role": "Developer"
-                }
-            ],
-            "description": "The most popular PHP library for use with the Twitter OAuth REST API.",
-            "homepage": "https://twitteroauth.com",
-            "keywords": [
-                "Twitter API",
-                "Twitter oAuth",
-                "api",
-                "oauth",
-                "rest",
-                "social",
-                "twitter"
-            ],
-            "time": "2015-08-18 15:56:04"
-        },
         {
             "name": "facebook/php-sdk-v4",
             "version": "5.0.0",
@@ -114,12 +60,64 @@
                 "sdk"
             ],
             "time": "2015-07-08 19:08:57"
+        },
+        {
+            "name": "j7mbo/twitter-api-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/J7mbo/twitter-api-php.git",
+                "reference": "a89ce3e294484aad7ae13dbabe45fb3928024ef8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/J7mbo/twitter-api-php/zipball/a89ce3e294484aad7ae13dbabe45fb3928024ef8",
+                "reference": "a89ce3e294484aad7ae13dbabe45fb3928024ef8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5,>=4.5.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "TwitterAPIExchange.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GNU Public License"
+            ],
+            "authors": [
+                {
+                    "name": "James Mallison",
+                    "homepage": "https://github.com/j7mbo/twitter-api-php"
+                }
+            ],
+            "description": "Simple PHP Wrapper for Twitter API v1.1 calls",
+            "homepage": "https://github.com/j7mbo/twitter-api-php",
+            "keywords": [
+                "api",
+                "php",
+                "twitter"
+            ],
+            "time": "2015-08-03 21:35:18"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "j7mbo/twitter-api-php": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
