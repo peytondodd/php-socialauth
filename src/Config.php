@@ -40,7 +40,7 @@ class Config{
             /*
              * @TODO Here need to check the given domain is valid or not. Return true if valid otherwise return false
              */
-            return true;
+            return false;
         }
     }
 }

@@ -67,7 +67,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
     public function testCheckValidDomainReturnTrueWhenValidDomain()
     {
         $response = $this->config->checkValidDomain('http://google.com');
-        if(is_bool($response))
+        if($response == true)
         {
             $this->assertTrue(true);
         }
@@ -79,7 +79,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
     public function testCheckValidDomainReturnFalseWhenInvalidDomain()
     {
         $response = $this->config->checkValidDomain(1);
-        if(is_bool($response))
+        if($response == false)
         {
             $this->assertTrue(true);
         }
