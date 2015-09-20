@@ -22,7 +22,7 @@ class Config{
 
     public static $name = 'Config';
 
-    public static $facebookApiID = FACEBOOK_API_ID;
+    public static $facebodokApiID = FACEBOOK_API_ID;
 
     public static $facebookApiSecretKey = FACEBOOK_API_SECRET_KEY;
 
@@ -33,7 +33,7 @@ class Config{
 
     public static function checkValidDomain($domain)
     {
-        if(DEVELOPMENT_MODE == true){
+        if(DEVELOPMENT_MODE == true && is_string($domain)){
             return true;
         }
         else{
