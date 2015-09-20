@@ -10,6 +10,7 @@
 
 namespace SocialAuth;
 
+
 interface SocialAuthInterface {
 
     public function getLoginUrl();
