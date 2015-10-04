@@ -29,38 +29,11 @@ class ConfigTest extends PHPUnit_Framework_TestCase
     public function testNameStaticProperty()
     {
         $this->assertClassHasStaticAttribute('name', '\SocialAuth\Config');
-    }
-
-    public function testFacebookApiIDStaticProperty()
-    {
-        $this->assertClassHasStaticAttribute('name', '\SocialAuth\Config');
-    }
-
-    public function testFacebookApiSecretKeyStaticProperty()
-    {
+        $this->assertClassHasStaticAttribute('facebodokApiID', '\SocialAuth\Config');
         $this->assertClassHasStaticAttribute('facebookApiSecretKey', '\SocialAuth\Config');
-    }
-
-    public function testTwitterCustomerKeyStaticProperty()
-    {
         $this->assertClassHasStaticAttribute('twitterCustomerKey', '\SocialAuth\Config');
-    }
-
-
-    public function testTwitterCustomerSecretKeyStaticProperty()
-    {
         $this->assertClassHasStaticAttribute('twitterCustomerSecretKey', '\SocialAuth\Config');
-    }
-
-
-    public function testTwitterAccessTokenStaticProperty()
-    {
         $this->assertClassHasStaticAttribute('twitterAccessToken', '\SocialAuth\Config');
-    }
-
-
-    public function testTwitterAccessTokenSecretStaticProperty()
-    {
         $this->assertClassHasStaticAttribute('twitterAccessTokenSecret', '\SocialAuth\Config');
     }
 
